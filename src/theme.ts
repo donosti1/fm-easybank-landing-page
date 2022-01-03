@@ -83,7 +83,7 @@ export default extendTheme({
     },
     Heading: {
       baseStyle: {
-        textTransform: "uppercase",
+        color: "primary.900",
       },
     },
   },

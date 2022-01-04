@@ -53,10 +53,10 @@ const Hero: React.FC = () => {
         </Container>
         <Image
           position="absolute"
-          right={["0%", -40]}
+          right={["0%", -40, -12]}
           src="assets/image-mockups.png"
-          top={[-12, -48]}
-          transform="scale(.85)"
+          top={[-12, -48, -8]}
+          transform={["scale(.85)", "scale(.85)", "scale(1.3)"]}
         />
       </Stack>
     </Stack>

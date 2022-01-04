@@ -6,8 +6,8 @@ This is a solution to the [Easybank landing page challenge on Frontend Mentor](h
 
 - [Overview](#overview)
   - [The challenge](#the-challenge)
-<!--   - [Screenshot](#screenshot)
-  - [Links](#links) -->
+  - [Screenshot](#screenshot)
+  - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
 - [Author](#author)
@@ -23,14 +23,14 @@ Users should be able to:
 - View the optimal layout for the site depending on their device's screen size
 - See hover states for all interactive elements on the page
 
-<!-- ### Screenshot
+### Screenshot
 
 ![](./screenshot.jpg)
 
 ### Links
 
 - Solution URL: [https://github.com/donosti1/fm-easybank-landing-page](https://github.com/donosti1/fm-easybank-landing-page)
-- Live Site URL: [https://fm-easybank-landing-page-donosti1.vercel.app/](https://fm-easybank-landing-page-donosti1.vercel.app/) -->
+- Live Site URL: [https://fm-easybank-landing-page-donosti1.vercel.app/](https://fm-easybank-landing-page-donosti1.vercel.app/)
 
 ## My process
 
@@ -39,8 +39,10 @@ Users should be able to:
 - [React](https://reactjs.org/) - JS library
 - [Chakra UI](https://chakra-ui.com/) - React Component library
 - SVG Logo with props
-- Button with Gradient Background
-- 
+- Button with gradient Background
+- Navbar with gradient border on hover 
+- Image overflowing divs with css scale property
+- Mobile menu with ChakraUI Modal(Overlay with partial height & gradient bg with opacity-HSLA model-)
 
 ## Author
 

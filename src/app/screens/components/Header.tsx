@@ -2,18 +2,14 @@ import React, {useEffect, useState} from "react";
 import {
   Button,
   Container,
-  Drawer,
-  DrawerBody,
-  DrawerFooter,
-  DrawerHeader,
-  DrawerOverlay,
-  DrawerContent,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalBody,
   Icon,
-  Image,
   Link,
   Stack,
   useDisclosure,
-  DrawerCloseButton,
 } from "@chakra-ui/react";
 import {AiOutlineClose, AiOutlineMenu} from "react-icons/ai";
 
@@ -81,7 +77,7 @@ const Header = () => {
   return (
     <Stack
       backgroundColor="white"
-      height={["12vh", "12vh"]}
+      height={["10vh", "12vh", "10vh"]}
       justifyContent="center"
       paddingBottom={[scrollPosition > 64 ? 2 : 2, 0]}
       paddingTop={[scrollPosition > 64 ? 2 : 2, 0]}
@@ -127,8 +123,22 @@ const Header = () => {
             zIndex="1000"
             onClick={isOpen ? onClose : onOpen}
           >
-            <Icon as={AiOutlineMenu} color="black" h={6} w={6} />
+            <Icon as={isOpen ? AiOutlineClose : AiOutlineMenu} color="black" h={6} w={6} />
           </Button>
+          <Modal isOpen={isOpen} motionPreset="none" size="md" onClose={onClose}>
+            <ModalOverlay />
+            <ModalContent>
+              <ModalBody>
+                <Stack>
+                  {menuItems.map((mi) => (
+                    <Button key={mi.id} variant="mobile-menu-link">
+                      {mi.label}
+                    </Button>
+                  ))}
+                </Stack>
+              </ModalBody>
+            </ModalContent>
+          </Modal>
         </Stack>
       </Container>
     </Stack>

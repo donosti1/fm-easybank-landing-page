@@ -77,10 +77,9 @@ export default extendTheme({
           },
         },
         "mobile-menu-link": {
-          color: "white",
-          textTransform: "uppercase",
-          h: 12,
-          fontSize: "2xl",
+          color: "primary.900",
+          h: 10,
+          fontSize: "lg",
           fontWeight: "300",
         },
       },
@@ -88,6 +87,20 @@ export default extendTheme({
     Heading: {
       baseStyle: {
         color: "primary.900",
+      },
+    },
+    Modal: {
+      baseStyle: {
+        overlay: {
+          bg: "linear-gradient(hsla(233, 26%, 24%,.6) 50%,hsla(0, 100%, 100%,.3))",
+          maxHeight: "90vh",
+          top: "10vh",
+        },
+        dialog: {
+          maxHeight: "40%",
+          top: "6vh",
+          w: "90%",
+        },
       },
     },
   },

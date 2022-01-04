@@ -62,7 +62,11 @@ export default extendTheme({
           paddingInlineEnd: ["inherit", 0],
           _hover: {color: "primary.300"},
         },
-        "header-link": {},
+        "header-link": {
+          color: "primary.700",
+          fontWeight: "400",
+          height: "100%",
+        },
         "request-invite": {
           bgGradient: "linear(to-r,primary.300, primary.500)",
           color: "white",

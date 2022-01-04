@@ -87,12 +87,12 @@ const Gallery = () => {
 const Articles: React.FC = () => {
   return (
     <>
-      <Stack alignItems={["center", "flex-start"]} backgroundColor="primary.50">
+      <Stack alignItems={["center", "flex-start"]} backgroundColor="primary.50" paddingY={[6, 16]}>
         <Container maxWidth="container.xl">
           <Stack direction={["column", "row"]} spacing={0} wrap="wrap">
             <Heading
               as="h2"
-              fontSize={["2xl", "5xl"]}
+              fontSize={["2xl", "4xl"]}
               fontWeight="300"
               textAlign={["center", "left"]}
               width={["100%", "50%"]}
@@ -105,7 +105,6 @@ const Articles: React.FC = () => {
             </Stack>
           </Stack>
         </Container>
-        <Stack h={[16, 32]} />
       </Stack>
     </>
   );

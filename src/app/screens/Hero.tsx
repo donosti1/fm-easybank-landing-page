@@ -1,33 +1,63 @@
 import React from "react";
-import {Container, Heading, SimpleGrid, Stack, Text} from "@chakra-ui/react";
+import {Button, Container, Image, Heading, Stack, Text} from "@chakra-ui/react";
 
 import Header from "./components/Header";
 
 const Hero: React.FC = () => {
   return (
     <Stack
-      alignContent="flex-end"
-      alignItems="center"
+      backgroundColor="primary.50"
       backgroundImage={[
-        "url('/assets/mobile/image-hero.jpg')",
-        "url('/assets/desktop/image-hero.jpg')",
+        "url('/assets/bg-intro-mobile.svg')",
+        "url('/assets/bg-intro-desktop.svg')",
       ]}
+      backgroundPosition={["50% 0%", "230% 75%"]}
       backgroundRepeat="no-repeat"
-      backgroundSize="cover"
-      height="100vh"
-      justifyContent="space-between"
-      paddingBottom={[0, 32]}
-      paddingTop={[0, 16]}
+      backgroundSize={["contain", "80%"]}
     >
-      <Header />
-      <Stack paddingTop={[40, 0]}>
+      <Stack
+        height={["auto", "88vh"]}
+        justifyContent="center"
+        overflowY={["hidden", "inherit"]}
+        paddingBottom={[8, 0]}
+        paddingTop={[80, 0]}
+        position="relative"
+      >
         <Container maxWidth={["container.sm", "container.xl"]}>
-          <Stack borderColor="white" borderWidth={2} padding={[4, 8]} width={["100%", "54%"]}>
-            <Heading as="h1" fontSize={["4xl", "6xl"]} fontWeight="300" lineHeight={["1.0", "1"]}>
-              Immersive experiences that deliver
+          <Stack
+            alignItems={["center", "flex-start"]}
+            padding={[4, 8]}
+            spacing={[8, 6]}
+            width={["100%", "45%"]}
+          >
+            <Heading
+              as="h1"
+              fontSize={["3xl", "5xl"]}
+              fontWeight="300"
+              lineHeight={["1.2", "1.2"]}
+              textAlign={["center", "left"]}
+            >
+              Next generation digital banking
             </Heading>
+            <Text
+              color="primary.700"
+              fontSize={["md", "lg"]}
+              lineHeight={["inherit", "1.6"]}
+              textAlign={["center", "left"]}
+            >
+              Take your financial life online. Your Easybank account will be a one-stop-shop for
+              spending, saving, budgeting, investing, and much more.
+            </Text>
+            <Button variant="request-invite">Request Invite</Button>
           </Stack>
         </Container>
+        <Image
+          position="absolute"
+          right={["0%", -40]}
+          src="assets/image-mockups.png"
+          top={[-12, -48]}
+          transform="scale(.85)"
+        />
       </Stack>
     </Stack>
   );

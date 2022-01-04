@@ -22,11 +22,11 @@ const Header = () => {
   const {isOpen, onOpen, onClose} = useDisclosure();
   const btnRef = React.useRef(null);
   const menuItems = [
-    {id: 0, label: "About "},
-    {id: 1, label: "Careers "},
-    {id: 2, label: "Events"},
-    {id: 3, label: "Products"},
-    {id: 4, label: "Support"},
+    {id: 0, label: "Home"},
+    {id: 1, label: "About"},
+    {id: 2, label: "Contact"},
+    {id: 3, label: "Blog"},
+    {id: 4, label: "Careers"},
   ];
 
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -43,6 +43,7 @@ const Header = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
   const menu = menuItems.map((mi) => (
     <Button
       key={mi.id}
@@ -52,8 +53,8 @@ const Header = () => {
           display: "block",
           position: "absolute",
           bottom: "0",
-          height: "2px",
-          width: "60%",
+          height: "4px",
+          width: "70%",
           background:
             "-webkit-linear-gradient(left, var(--chakra-colors-primary-500) 0%, var(--chakra-colors-primary-300) 100%)",
 
@@ -64,11 +65,11 @@ const Header = () => {
           display: "block",
           position: "absolute",
           bottom: "0",
-          height: "2px",
+          height: "4px",
           width: "0%",
           background:
             "-webkit-linear-gradient(left, var(--chakra-colors-primary-500) 0%, var(--chakra-colors-primary-300) 100%)",
-          transition: "all .2s cubic-bezier(0.68, -0.55, 0.27, 1.55)",
+          transition: "all .4s cubic-bezier(0.68, -0.55, 0.27, 1.55)",
         },
       }}
       variant="header-link"
@@ -78,30 +79,47 @@ const Header = () => {
   ));
 
   return (
-    <>
+    <Stack
+      backgroundColor="white"
+      height={["12vh", "12vh"]}
+      justifyContent="center"
+      paddingBottom={[scrollPosition > 64 ? 2 : 2, 0]}
+      paddingTop={[scrollPosition > 64 ? 2 : 2, 0]}
+      position={["fixed", "relative"]}
+      width="100%"
+      zIndex="100"
+    >
       <Container
-        backgroundColor={scrollPosition > 64 ? "black" : "transparent"}
+        backgroundColor="white"
+        height={["auto", "100%"]}
         maxWidth={["container.sm", "container.xl"]}
-        paddingBottom={[scrollPosition > 64 ? 2 : 0, 0]}
-        paddingTop={[scrollPosition > 64 ? 2 : 6, 0]}
-        position={["fixed", "relative"]}
         zIndex="100"
       >
         <Stack
+          alignContent="center"
           alignItems="center"
           as="header"
           className="Header"
           direction="row"
+          height={["auto", "100%"]}
           justifyContent="space-between"
           role="navigation"
         >
           <Link>
-            {/* <Image alt="logo" height={[6, 8]} src="/assets/logo.svg" width={[32, 40]} /> */}
             <Logo fill="black" />
           </Link>
-          <Stack direction="row" display={["none", "flex"]} spacing={[2, 2]}>
+          <Stack
+            alignItems="center"
+            direction="row"
+            display={["none", "flex"]}
+            height="100%"
+            spacing={[2, 0]}
+          >
             {menu}
           </Stack>
+          <Button display={["none", "flex"]} variant="request-invite">
+            Request Invite
+          </Button>
           <Button
             ref={btnRef}
             display={["flex", "none"]}
@@ -109,65 +127,11 @@ const Header = () => {
             zIndex="1000"
             onClick={isOpen ? onClose : onOpen}
           >
-            <Icon as={AiOutlineMenu} color="white" h={6} w={6} />
+            <Icon as={AiOutlineMenu} color="black" h={6} w={6} />
           </Button>
-          <Drawer
-            finalFocusRef={btnRef}
-            isOpen={isOpen}
-            placement="left"
-            size="full"
-            onClose={onClose}
-          >
-            <DrawerOverlay />
-            <DrawerContent bgColor="black">
-              <DrawerBody px={0} py={0}>
-                <Container
-                  height="100%"
-                  maxWidth="container.sm"
-                  paddingBottom={scrollPosition > 64 ? 2 : 0}
-                  paddingTop={scrollPosition > 64 ? 2 : 6}
-                >
-                  <Stack alignItems="flex-start" height="100%" justifyContent="space-between">
-                    <Stack
-                      alignItems="center"
-                      direction="row"
-                      justifyContent="space-between"
-                      width="100%"
-                    >
-                      <Link>
-                        <Image alt="logo" height={[6, 8]} src="/assets/logo.svg" width={[32, 40]} />
-                      </Link>
-                      <Button
-                        ref={btnRef}
-                        display={["flex", "none"]}
-                        variant="header-menu-button"
-                        zIndex="1000"
-                        onClick={isOpen ? onClose : onOpen}
-                      >
-                        <Icon as={AiOutlineClose} color="white" h={6} w={6} />
-                      </Button>
-                    </Stack>
-                    <Stack
-                      alignItems="flex-start"
-                      flex={1}
-                      justifyContent="center"
-                      spacing={0}
-                      width="100%"
-                    >
-                      {menuItems.map((mi) => (
-                        <Button key={mi.id} variant="mobile-menu-link">
-                          {mi.label}
-                        </Button>
-                      ))}
-                    </Stack>
-                  </Stack>
-                </Container>
-              </DrawerBody>
-            </DrawerContent>
-          </Drawer>
         </Stack>
       </Container>
-    </>
+    </Stack>
   );
 };
 

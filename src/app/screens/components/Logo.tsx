@@ -8,7 +8,7 @@ const Logo = (props: ILogo) => {
   return (
     <svg height="20" viewBox="0 0 139 20" width="139" xmlns="http://www.w3.org/2000/svg" {...props}>
       <defs>
-        <linearGradient id="a" x1="72.195%" x2="17.503%" y1="0%" y2="100%">
+        <linearGradient id="logoGradient" x1="72.195%" x2="17.503%" y1="0%" y2="100%">
           <stop offset="0%" stopColor="#33D35E" />
           <stop offset="100%" stopColor="#2AB6D9" />
         </linearGradient>

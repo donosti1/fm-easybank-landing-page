@@ -99,7 +99,6 @@ const Header = () => {
           direction="row"
           height={["auto", "100%"]}
           justifyContent="space-between"
-          role="navigation"
         >
           <Link>
             <Logo fill="black" />

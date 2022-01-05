@@ -27,14 +27,14 @@ const CustomMenuItem = ({menuItems}: {menuItems: string[]}) => {
 };
 const SocialNetworks = () => {
   const item = [
-    {id: 0, icon: FaFacebookSquare},
-    {id: 1, icon: FaYoutube},
-    {id: 2, icon: FaTwitter},
-    {id: 3, icon: FaPinterest},
-    {id: 4, icon: FaInstagram},
+    {id: 0, icon: FaFacebookSquare, iconLabel: "Facebook"},
+    {id: 1, icon: FaYoutube, iconLabel: "Youtube"},
+    {id: 2, icon: FaTwitter, iconLabel: "Twitter"},
+    {id: 3, icon: FaPinterest, iconLabel: "Pinterest"},
+    {id: 4, icon: FaInstagram, iconLabel: "Instagram"},
   ];
   const icons = item.map((it) => (
-    <Button key={it.id} variant="unstyled">
+    <Button key={it.id} aria-label={it.iconLabel} variant="unstyled">
       <Icon _hover={{color: "primary.300"}} as={it.icon} color="white" height={6} width={6} />
     </Button>
   ));

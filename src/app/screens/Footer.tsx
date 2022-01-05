@@ -62,7 +62,7 @@ const Footer = () => {
             justifyContent="space-between"
             spacing={[6, 0]}
           >
-            <Logo fill="white" />
+            <Logo fill="white" identifier="footer" />
             <SocialNetworks />
           </Stack>
           <Stack direction={["column", "row"]} gridColumn={["1", "2/4"]} spacing={[0, 24]}>

@@ -101,7 +101,7 @@ const Header = () => {
           justifyContent="space-between"
         >
           <Link>
-            <Logo fill="black" />
+            <Logo fill="black" identifier="header" />
           </Link>
           <Stack
             alignItems="center"

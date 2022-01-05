@@ -1,14 +1,16 @@
 import React from "react";
 interface ILogo {
   fill?: string;
+  identifier?: string;
 }
 const Logo = (props: ILogo) => {
   const isoLogoColor = props.fill ? props.fill : "#2D314D";
+  const fillerRef = `url(#${props.identifier})`;
 
   return (
     <svg height="20" viewBox="0 0 139 20" width="139" xmlns="http://www.w3.org/2000/svg" {...props}>
       <defs>
-        <linearGradient id="logoGradient" x1="72.195%" x2="17.503%" y1="0%" y2="100%">
+        <linearGradient id={props.identifier} x1="72.195%" x2="17.503%" y1="0%" y2="100%">
           <stop offset="0%" stopColor="#33D35E" />
           <stop offset="100%" stopColor="#2AB6D9" />
         </linearGradient>
@@ -19,7 +21,7 @@ const Logo = (props: ILogo) => {
           fill={isoLogoColor}
           fillRule="nonzero"
         />
-        <g fill="url(#a)">
+        <g fill={fillerRef}>
           <path d="M10.802 0L0 19.704h5.986L16.789 0z" />
           <path d="M18.171 0L7.368 19.704h5.986L24.157 0z" opacity=".5" />
           <path d="M25.539 0L14.737 19.704h5.986L31.525 0z" opacity=".15" />

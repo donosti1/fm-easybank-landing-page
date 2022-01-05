@@ -52,11 +52,12 @@ const Hero: React.FC = () => {
           </Stack>
         </Container>
         <Image
+          alt="app mockup"
           position="absolute"
-          right={["0%", -40, -12]}
+          right={["0%", -40]}
           src="assets/image-mockups.png"
-          top={[-12, -48, -8]}
-          transform={["scale(.85)", "scale(.85)", "scale(1.3)"]}
+          top={[-12, -48]}
+          transform={["scale(.85)", "scale(.85)"]}
         />
       </Stack>
     </Stack>
